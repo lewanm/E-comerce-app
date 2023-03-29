@@ -1,0 +1,55 @@
+.modificar {
+  border: 1px solid black;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 2fr 5fr 3fr;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-img {
+  margin-left: 5px;
+  height: 90%;
+}
+
+.product-img img {
+  width: 90%;
+}
+.product-info {
+  font-size: 0.6em;
+  height: 90%;
+}
+.product-info th {
+  font-size: 0.7rem;
+}
+.product-buttons {
+  margin-right: 5px;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product-buttons .edit-button {
+  background-color: var(--main-color);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.product-buttons .remove-button {
+  background-color: var(--remove-color);
+  color: var(--main-font-color);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50%;
+}

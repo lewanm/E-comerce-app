@@ -1,0 +1,84 @@
+header {
+  background-color: var(--main-color);
+  user-select: none;
+}
+.header-container {
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.5em;
+  gap: 10px;
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/*ESTE VA A SER UN BURGER*/
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 30px;
+}
+
+.logo {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-sizing: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.search-container {
+  height: 32px;
+  width: 150px;
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.search {
+  width: 75%;
+  height: 100%;
+}
+
+.search-icon {
+  border-left: 1px solid grey;
+  width: 25%;
+  height: 100%;
+}
+
+.avatar-cart-container {
+  display: flex;
+  gap: 5px;
+}
+
+.avatar-cart-container .avatar {
+  background-color: lightgrey;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.avatar-cart-container .cart {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2em;
+}
+
+.avatar-cart-container .cart .notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 0.6rem;
+  right: 0;
+  top: 0;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}

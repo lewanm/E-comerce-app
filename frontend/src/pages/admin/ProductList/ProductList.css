@@ -1,0 +1,39 @@
+.title-add-button {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.add-product-container {
+  user-select: none;
+  background: var(--main-color);
+  border-radius: 50%;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-product {
+  color: var(--main-font-color);
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.list-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+  margin: 0 0.5em;
+}
