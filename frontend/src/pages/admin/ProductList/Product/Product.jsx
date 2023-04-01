@@ -1,32 +1,61 @@
+//DEPENDENCIES
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+//STYLES
 import "./Product.css";
-export function Product() {
+
+export function Product({ updateProducts, product }) {
+  const {
+    id,
+    item,
+    brand,
+    model,
+    stock,
+    img = "https://electroluxar.vtexassets.com/arquivos/ids/162435-600-600?v=638016147499900000&width=600&height=600&aspect=tru",
+  } = product;
+
+  const navigate = useNavigate();
+
+  const handleRemove = () => {
+    axios
+      .delete(`http://localhost:3001/api/products/${id}`)
+      .then((response) => console.log(response))
+      .then(() => updateProducts());
+  };
+
+  const handleUpdate = () => {
+    navigate(`/admin/product/${id}`);
+  };
+
   return (
-    <>
-      <article className="modificar">
-        <div className="product-img">
-          <img
-            src="https://electroluxar.vtexassets.com/arquivos/ids/162435-600-600?v=638016147499900000&width=600&height=600&aspect=true"
-            alt=""
-          />
-        </div>
-        <div className="product-info">
-          <table>
+    <article className="modificar">
+      <div className="product-img">
+        <img src={img} alt={`${item} ${brand}`} />
+      </div>
+      <div className="product-info">
+        <table>
+          <tbody>
             <tr>
-              <th>Heladera Samsung</th>
+              <td>{`${item} ${brand}`}</td>
             </tr>
             <tr>
-              <td>12345-P</td>
+              <td>{model}</td>
             </tr>
             <tr>
-              <td>Stock: 1</td>
+              <td>Stock:{stock}</td>
             </tr>
-          </table>
+          </tbody>
+        </table>
+      </div>
+      <div className="product-buttons">
+        <div className="edit-button" onClick={handleUpdate}>
+          ✏️
         </div>
-        <div className="product-buttons">
-          <div className="edit-button">✏️</div>
-          <div className="remove-button">X</div>
+        <div className="remove-button" onClick={handleRemove}>
+          X
         </div>
-      </article>
-    </>
+      </div>
+    </article>
   );
 }

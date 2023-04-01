@@ -11,7 +11,7 @@ import "./global.css";
 
 //ADMIN
 import { ProductList } from "./pages/admin/ProductList/ProductList";
-import { NewProduct } from "./pages/admin/NewProduct/NewProduct";
+import { AddEditProduct } from "./pages/admin/ProductList/add-edit-product/AddEditProduct";
 
 export default function App() {
   return (
@@ -25,7 +25,8 @@ export default function App() {
         <Route path="/admin" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="product-list" element={<ProductList />} />
-          <Route path="new-product" element={<NewProduct />} />
+          <Route path="product" element={<AddEditProduct />} />
+          <Route path="product/:id" element={<AddEditProduct />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

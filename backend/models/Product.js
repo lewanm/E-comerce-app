@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 const productSchema = new Schema({
   category: String,
-  sub_category: String,
+  item: String,
   brand: String,
   model: String,
   price: Number,

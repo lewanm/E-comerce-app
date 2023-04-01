@@ -20,10 +20,6 @@ require("./mongo");
 const { Product } = require("./models/Product");
 
 //API
-app.get("/test", (req, res) => {
-  res.send("ES UNA PRUEbA!! ");
-});
-
 app.get("/api/products", (req, res) => {
   Product.find({}).then((products) => {
     res.json(products);
@@ -55,7 +51,7 @@ app.post("/api/products", (req, res) => {
 
   const newProduct = new Product({
     category: product.category,
-    sub_category: product.sub_category,
+    item: product.item,
     brand: product.brand,
     model: product.model,
     price: product.price,
@@ -89,7 +85,7 @@ app.put("/api/products/:id", (req, res, next) => {
 
   const updatedProduct = {
     category: product.category,
-    sub_category: product.sub_category,
+    item: product.sub_category,
     brand: product.brand,
     model: product.model,
     price: product.price,

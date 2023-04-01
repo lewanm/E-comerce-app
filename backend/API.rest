@@ -10,7 +10,7 @@ content-type: application/json
 
 {
     "category": "appliances",
-    "sub_category": "frigde",
+    "item": "frigde",
     "brand": "samsung",
     "model": "RT38K5932S 323L",
     "price": 230000,
@@ -23,7 +23,7 @@ content-type: application/json
 }
 
 ### DELETE
-DELETE http://localhost:3001/api/products/6417b09e4e6447e66f3b719f
+DELETE http://localhost:3001/api/products/6426f56d633a8ef5509d3a77
 
 ### update
 PUT http://localhost:3001/api/products/6417b09e4e6447e66f3b719f HTTP/1.1
@@ -31,8 +31,8 @@ content-type: application/json
 
 {
     "category": "appliances",
-    "sub_category": "frigde",
-    "brand": "samung",
+    "item": "frigde",
+    "brand": "samsung",
     "model": "RT38K5932S 323L",
     "price": 230000,
     "stock": 20,
