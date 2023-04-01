@@ -18,10 +18,16 @@ export function Product({ updateProducts, product }) {
   const navigate = useNavigate();
 
   const handleRemove = () => {
-    axios
-      .delete(`http://localhost:3001/api/products/${id}`)
-      .then((response) => console.log(response))
-      .then(() => updateProducts());
+    if (
+      window.confirm(
+        `Seguro que quiere elimiar el item ${item} ${brand} ${model}?`
+      )
+    ) {
+      axios
+        .delete(`http://localhost:3001/api/products/${id}`)
+        .then((response) => console.log(response))
+        .then(() => updateProducts());
+    }
   };
 
   const handleUpdate = () => {
