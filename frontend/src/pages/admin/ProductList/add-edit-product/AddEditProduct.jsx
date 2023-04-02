@@ -46,11 +46,18 @@ export function AddEditProduct() {
     /*     console.log(`${key}: ${value}`); */
     setNewProduct({ ...newProduct, [key]: value });
   };
-  const formIsComplete = () => true;
+  const formIsComplete = () => {
+    //TODO completar el fomrulario y la verificacion de que este completo correctamente.
+    return true;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.table(newProduct);
+    if (!formIsComplete()) {
+      alert("Debe completar todos los campos");
+      return;
+    }
+
     if (id === undefined) createNewProduct();
     else updateProduct(id);
 

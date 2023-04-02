@@ -45,6 +45,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .product-buttons .remove-button {
@@ -56,6 +57,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 table {
