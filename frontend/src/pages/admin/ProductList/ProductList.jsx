@@ -29,7 +29,7 @@ export function ProductList() {
         </div>
       </div>
 
-      <section className="list-container">
+      <section className="admin-list-container">
         {products.map((product) => (
           <Product
             updateProducts={updateProducts}

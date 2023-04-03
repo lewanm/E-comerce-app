@@ -1,0 +1,21 @@
+.filters-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.relevancia-container,
+.filter-container {
+  display: flex;
+  margin: 1rem;
+  border: 1px solid grey;
+  width: 50%;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.separacion {
+  background: grey;
+  width: 1px;
+}

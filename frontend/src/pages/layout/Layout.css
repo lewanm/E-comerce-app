@@ -2,6 +2,24 @@ header {
   background-color: var(--main-color);
   user-select: none;
 }
+.placeholder-burger {
+  font-size: 0.7rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.placeholder-burger,
+.placeholder-burger a:link,
+.placeholder-burger a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.placeholder-burger a:hover,
+.placeholder-burger a:active {
+  color: black;
+  text-decoration: none;
+}
+
 .header-container {
   height: 62px;
   display: flex;

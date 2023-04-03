@@ -4,6 +4,13 @@ import { Outlet, Link } from "react-router-dom";
 //STYLES
 import "./Layout.css";
 
+const style = {
+  color: "white",
+  fontSize: "0.6rem",
+  display: "flex",
+  alignItems: "center",
+};
+
 export const Layout = () => {
   return (
     <>
@@ -12,12 +19,15 @@ export const Layout = () => {
           <div className="navbar-logo-container">
             <nav className="navbar">
               <ul>
-                <li>
-                  <Link to="/admin/product-list">Home</Link>
+                <li className="placeholder-burger">
+                  <Link to="/">Home</Link>
+                  <Link to="/admin/product-list">Admin</Link>
                 </li>
               </ul>
             </nav>
-            <div className="logo"></div>
+            <div style={style} className="logo">
+              Jumbo
+            </div>
           </div>
 
           <div className="search-container">

@@ -1,0 +1,9 @@
+.precio-justos {
+  position: absolute;
+  color: white;
+  background-color: blue;
+  border-radius: 3px;
+  top: 5px;
+  left: 5px;
+  font-size: 0.8rem;
+}

@@ -1,4 +1,4 @@
-.modificar {
+.modificar-nombre {
   border: 1px solid black;
   width: 100%;
   height: 50px;
@@ -10,7 +10,7 @@
   gap: 10px;
 }
 
-.product-img {
+.admin-product-img {
   margin-left: 5px;
   background-color: lightgoldenrodyellow;
   width: 90%;
@@ -18,17 +18,15 @@
   height: 90%;
 }
 
-.product-img img {
+.admin-product-img img {
   width: inherit;
 }
-.product-info {
+.admin-product-info {
   font-size: 0.6em;
   height: 90%;
 }
-.product-info th {
-  font-size: 0.7rem;
-}
-.product-buttons {
+
+.admin-product-buttons {
   user-select: none;
   margin-right: 5px;
   height: 90%;
@@ -37,7 +35,7 @@
   align-items: center;
 }
 
-.product-buttons .edit-button {
+.admin-product-buttons .edit-button {
   background-color: var(--main-color);
   width: 32px;
   height: 32px;
@@ -48,7 +46,7 @@
   cursor: pointer;
 }
 
-.product-buttons .remove-button {
+.admin-product-buttons .remove-button {
   background-color: var(--remove-color);
   color: var(--main-font-color);
   width: 32px;

@@ -13,13 +13,16 @@ import "./global.css";
 import { ProductList } from "./pages/admin/ProductList/ProductList";
 import { AddEditProduct } from "./pages/admin/ProductList/add-edit-product/AddEditProduct";
 
+//USER
+import { Products } from "./pages/products/Products";
+
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<TestPage />} />
+          <Route path="products" element={<Products />} />
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="/admin" element={<Layout />}>

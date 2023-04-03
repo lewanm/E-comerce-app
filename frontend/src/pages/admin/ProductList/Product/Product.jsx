@@ -1,5 +1,5 @@
 //DEPENDENCIES
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 //STYLES
@@ -35,11 +35,11 @@ export function Product({ updateProducts, product }) {
   };
 
   return (
-    <article className="modificar">
-      <div className="product-img">
+    <article className="modificar-nombre">
+      <div className="admin-product-img">
         <img src={img} alt={`${item} ${brand}`} />
       </div>
-      <div className="product-info">
+      <div className="admin-product-info">
         <table>
           <tbody>
             <tr>
@@ -54,7 +54,7 @@ export function Product({ updateProducts, product }) {
           </tbody>
         </table>
       </div>
-      <div className="product-buttons">
+      <div className="admin-product-buttons">
         <div className="edit-button" onClick={handleUpdate}>
           ✏️
         </div>

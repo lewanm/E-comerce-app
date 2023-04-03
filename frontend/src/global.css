@@ -5,6 +5,7 @@
   --remove-color: red;
   --main-font-color: white;
   --main-font: "Montserrat", sans-serif;
+  --border-radius-button: 5px;
 }
 
 * {

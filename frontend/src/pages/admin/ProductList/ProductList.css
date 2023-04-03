@@ -31,7 +31,7 @@
   font-weight: 500;
 }
 
-.list-container {
+.admin-list-container {
   display: flex;
   flex-flow: column nowrap;
   gap: 5px;
