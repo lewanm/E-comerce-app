@@ -1,21 +1,34 @@
 import "./UserProducts.css";
 
+import { useState } from "react";
+
 import { Filters } from "../../components/users/Filters";
-import { Product } from "./product/Product";
+import { Pepe } from "./product/userProduct";
 
 export function Products() {
-  const randomNumber = Math.ceil(Math.random() * 200);
+  const [isGrid, setIsGrid] = useState(true);
+  const [randomNumber, setRandomNumber] = useState(
+    Math.ceil(Math.random() * 200)
+  );
+
+  const handleClickInline = () => {
+    setIsGrid(false);
+  };
+
+  const handleClickGrid = () => {
+    setIsGrid(true);
+  };
 
   return (
     <div className="products-view">
       <h1>Dejo este nombre?</h1>
       <div className="views-container">
-        <div className="cambiarDeNombreLine">
+        <div onClick={handleClickInline} className="cambiarDeNombreLine">
           <div className="line 1"></div>
           <div className="line 2"></div>
           <div className="line 3"></div>
         </div>
-        <div className="cambiarDeNombreGrid">
+        <div onClick={handleClickGrid} className="cambiarDeNombreGrid">
           <div className="grid 1"></div>
           <div className="grid 2"></div>
           <div className="grid 3"></div>
@@ -29,13 +42,19 @@ export function Products() {
 
       <Filters />
 
-      <div className="product-list-container">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+      <div
+        className={
+          isGrid
+            ? "product-list-container-grid"
+            : "product-list-container-inline"
+        }
+      >
+        <Pepe isGrid={isGrid} />
+        <Pepe isGrid={isGrid} />
+        <Pepe isGrid={isGrid} />
+        <Pepe isGrid={isGrid} />
+        <Pepe isGrid={isGrid} />
+        <Pepe isGrid={isGrid} />
       </div>
     </div>
   );

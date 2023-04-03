@@ -49,9 +49,20 @@
   width: 90%;
 }
 
-.product-list-container {
+.product-list-container-grid {
+  /*   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly; */
+
   display: grid;
   width: 90%;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.product-list-container-inline {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
   gap: 10px;
 }
