@@ -32,7 +32,7 @@ header {
 .navbar-logo-container {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 1rem;
 }
 /*ESTE VA A SER UN BURGER*/
 .navbar {

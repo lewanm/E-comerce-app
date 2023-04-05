@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
-  --main-color: green;
+  --main-color: #2dc850;
   --remove-color: red;
   --main-font-color: white;
   --main-font: "Montserrat", sans-serif;
-  --border-radius-button: 5px;
+  --border-radius-button: 7px;
+  --border-color: #d1d1d1;
+  --button-success: #a4c735;
+  --button-warning: orange;
 }
 
 * {

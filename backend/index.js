@@ -6,7 +6,7 @@ const notFound = require("./middleware/notFound");
 const handleIdErrors = require("./middleware/handleIdErrors");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
@@ -20,6 +20,11 @@ require("./mongo");
 const { Product } = require("./models/Product");
 
 //API
+//API DE PRUEBA
+app.get("/nisa", function (req, res, next) {
+  res.json({ msg: "Pruebihna" });
+});
+
 app.get("/api/products", (req, res) => {
   Product.find({}).then((products) => {
     res.json(products);
@@ -51,11 +56,16 @@ app.post("/api/products", (req, res) => {
 
   const newProduct = new Product({
     category: product.category,
+    sub_category: product.sub_category,
     item: product.item,
     brand: product.brand,
+    complete_brand: product.complete_brand,
     model: product.model,
     price: product.price,
+    precio_justo: product.precio_justo,
     stock: product.stock,
+    discount: product.discount,
+    image: product.image,
     properties: product.properties,
   });
 
@@ -85,11 +95,16 @@ app.put("/api/products/:id", (req, res, next) => {
 
   const updatedProduct = {
     category: product.category,
-    item: product.sub_category,
+    sub_category: product.sub_category,
+    item: product.item,
     brand: product.brand,
+    complete_brand: product.complete_brand,
     model: product.model,
     price: product.price,
+    precio_justo: product.precio_justo,
     stock: product.stock,
+    discount: product.discount,
+    image: product.image,
     properties: product.properties,
   };
   Product.findByIdAndUpdate(id, updatedProduct, { new: true })

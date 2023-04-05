@@ -1,56 +1,95 @@
 .product-card-grid {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
 }
 
-.product-card-grid .product-img-grid {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+.product-img-grid {
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   position: relative;
+  min-height: 121px;
 }
 
-.product-card-grid .product-img-grid img {
-  width: 100px;
+.product-img-grid img {
+  width: 50%;
+  margin: 1.5rem 0;
 }
 
 .product-text-container-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 5px;
+  gap: 1rem;
+  margin: 5px 10px;
 }
-.product-text-container-grid .product-text-grid {
+
+.product-text-grid {
   display: flex;
   flex-flow: nowrap column;
   gap: 5px;
 }
 
-.product-text-container-grid .product-text-grid .title {
+.product-text-grid .title {
   font-weight: 600;
   font-size: 0.8rem;
 }
 
-.product-text-container-grid .product-text-grid .subtitle {
-  font-size: 0.7rem;
+.product-text-grid .subtitle {
+  position: relative;
+  font-size: 0.8rem;
+  min-height: 45px;
+  overflow: auto;
 }
 
-.product-text-container-grid .product-price-grid {
+.product-price-grid {
   font-weight: 600;
 }
 
-.product-text-container-grid .product-mini-grid {
-  font-size: 0.6rem;
-  color: rgba(0, 0, 0, 0.6);
+.product-price-grid .price-container-grid {
+  font-weight: 600;
+  display: grid;
+  width: 70%;
+  min-height: 41px;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repear(3, 1fr);
+  gap: 3px 5px;
 }
 
-.product-text-container-grid .product-add-to-cart-grid {
-  margin: 0 0.5rem 0.5rem;
+.product-price-grid .price-container-grid .price {
+  grid-row: 1/2;
+}
+
+.product-price-grid .price-container-grid .discount {
+  grid-row: 1/2;
+  font-size: 0.8rem;
+  max-width: 30px;
+  padding: 5px 8px;
+
+  background-color: var(--main-color);
+  color: var(--main-font-color);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-price-grid .price-container-grid .original-price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+
+.product-mini-grid {
+  font-size: 0.6rem;
+  color: rgba(0, 0, 0, 0.6);
+  min-height: 33px;
+}
+
+.product-add-to-cart-grid {
+  margin: 5px 0;
   padding: 1rem;
   border-radius: var(--border-radius-button);
-  background-color: var(--main-color);
+  background-color: var(--button-success);
   color: var(--main-font-color);
   font-size: 1rem;
   font-weight: 600;
@@ -61,52 +100,70 @@
 
 .product-card-inline {
   display: flex;
-  flex-flow: row nowrap;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
+  padding: 0.5rem;
 }
 .product-card-inline .product-img-inline {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  position: relative;
+  width: 60%;
+  min-width: 180px;
 }
 
 .product-card-inline .product-img-inline img {
-  width: 100px;
+  width: 150px;
   object-fit: contain;
 }
 
 .product-text-container-inline {
+  width: 40%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   margin: 5px;
 }
 
-.product-text-container-inline .product-text-inline .title {
+.product-text-inline .title {
   font-weight: 600;
   font-size: 0.8rem;
 }
 
-.product-text-container-inline .product-text-inline .subtitle {
+.product-text-inline .subtitle {
   font-size: 0.7rem;
 }
 
-.product-text-container-inline .product-price-inline {
+.product-price-inline {
   font-weight: 600;
 }
 
-.product-text-container-inline .product-mini-inline {
+.price-container-inline .original-price {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.price-container-inline .discount {
+  font-size: 0.8rem;
+  max-width: 40px;
+  padding: 2px 0;
+  text-align: center;
+  margin-left: 1rem;
+  background-color: var(--main-color);
+  color: var(--main-font-color);
+  border-radius: 5px;
+}
+
+.product-mini-inline {
   font-size: 0.6rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .product-card-inline .product-add-to-cart-inline {
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: var(--border-radius-button);
-  background-color: var(--main-color);
+  background-color: var(--button-success);
   color: var(--main-font-color);
   font-size: 1rem;
   font-weight: 600;

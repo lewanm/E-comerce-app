@@ -1,21 +1,29 @@
 import "./Product.css";
 import { PrecioJustos } from "../../../components/PrecioJustos/PrecioJustos";
 
-const precio = (Math.random() * (1000 - 100) + 100).toFixed(2);
-const listaMedidas = ["kilo", "unidad"];
-const medida = listaMedidas[Math.floor(Math.random() * 2)];
+//weas placeholder
+const listaMedidas = ["kilo", "litro", "unidad"];
+const medida = listaMedidas[Math.floor(Math.random() * listaMedidas.length)];
 
-const img =
-  "https://electroluxar.vtexassets.com/arquivos/ids/162435-600-600?v=638016147499900000&width=600&height=600&aspect=tru";
+export function Pepe({ isGrid, product }) {
+  const { brand, discount, price, image, item, model } = product;
 
-export function Pepe(props) {
-  const { isGrid } = props;
+  const price_with_discount = price - (price * discount) / 100;
+  const subtitle = `${item} ${
+    brand.toLowerCase() === "sin marca" ? "" : brand
+  } ${model}`;
+
+  const formatNumber = (number) => number.toLocaleString();
+  const formatText = (string) => {
+    if (string.length > 45 && isGrid) return string.slice(0, 40) + "...";
+    return string;
+  };
 
   return (
     <div className={isGrid ? "product-card-grid" : "product-card-inline"}>
       <div className={isGrid ? "product-img-grid" : "product-img-inline"}>
-        {Math.random() * 10 > 7 && <PrecioJustos />}
-        <img src={img} alt="" />
+        {product.precio_justo && <PrecioJustos />}
+        <img src={image} alt={`${item} ${brand}`} />
       </div>
 
       <div
@@ -26,15 +34,41 @@ export function Pepe(props) {
         }
       >
         <div className={isGrid ? "product-text-grid" : "product-text-inline"}>
-          <p className="title">Cousine & CO NBE MP</p>
-          <p className="subtitle">Linguine Cuisine & Co 500 Gr</p>
+          <p className="title">
+            {/*             {complete_brand
+              ? complete_brand.toUpperCase()
+              : brand.toUpperCase()} */}
+            {brand.toUpperCase()}
+          </p>
+          <p className="subtitle">{formatText(subtitle)}</p>
         </div>
         <div className={isGrid ? "product-price-grid" : "product-price-inline"}>
-          ${precio}
+          {discount !== 0 ? (
+            <div
+              className={
+                isGrid ? "price-container-grid" : "price-container-inline"
+              }
+            >
+              <p className="price">${formatNumber(price_with_discount)}</p>
+              <p className="original-price">${formatNumber(price)}</p>
+              <p className="discount">-{discount}%</p>
+            </div>
+          ) : (
+            <div
+              className={
+                isGrid ? "price-container-grid" : "price-container-inline"
+              }
+            >
+              <p className="price">${formatNumber(price)}</p>
+            </div>
+          )}
         </div>
-        <p className={isGrid ? "product-mini-grid" : "product-mini-inline"}>
-          Precio regular: ${precio} x {medida}
-        </p>
+        <div className={isGrid ? "product-mini-grid" : "product-mini-inline"}>
+          <p>
+            Precio regular: ${price} x {medida}
+          </p>
+          <p>Llevando 2 ${price} c/u</p>
+        </div>
 
         <button
           className={

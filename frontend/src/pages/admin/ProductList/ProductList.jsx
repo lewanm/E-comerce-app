@@ -12,13 +12,17 @@ export function ProductList() {
   const [products, setProducts] = useState([]);
 
   const updateProducts = () => {
-    getProducts().then((products) => setProducts(products));
+    getProducts().then((products) => {
+      setProducts(products);
+    });
   };
+
   useEffect(() => {
     updateProducts();
   }, []);
   return (
     <>
+      <h3>HACER UN ORDER BY, QUE SEA POR QUERY Y QUE LO TRAIGA LA API</h3>
       <div className="title-add-button">
         <p className="title">Administrar productos</p>
 

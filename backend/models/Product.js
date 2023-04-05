@@ -2,13 +2,18 @@ const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const productSchema = new Schema({
-  category: String,
-  item: String,
-  brand: String,
-  model: String,
-  price: Number,
-  stock: Number,
-  properties: Schema.Types.Mixed,
+  category: String, //bebida
+  sub_category: String, //jugo
+  item: String, //jugo
+  brand: String, //Cepita
+  complete_brand: String, //Cepita del valle
+  model: String, //1.5L
+  price: Number, //181
+  precio_justo: Boolean,
+  stock: Number, //5 (para productos simples poner mayor de 1000 y no se muestra)
+  discount: Number, //ej %40, si tiene descuento que lo aplique
+  image: String, //url sacada del jumbo
+  properties: Schema.Types.Mixed, //aca seria un objeto con lo que quiera agregar
 });
 
 // realizo esto para modificar como me llega el _id y el __v del find
@@ -33,7 +38,7 @@ function findAll() {
     });
 }
 
-function insertOne() {
+/* function insertOne() {
   const product = new Product({
     category: "appliances",
     sub_category: "frigde",
@@ -57,7 +62,7 @@ function insertOne() {
     .catch((err) => {
       console.log(err);
     });
-}
+} */
 
 //modifica el export para exportar tambien las funciones que se realizan en el CRUD a si queda mas prolijo el index.js
-module.exports = { Product, insertOne, findAll };
+module.exports = { Product, findAll };

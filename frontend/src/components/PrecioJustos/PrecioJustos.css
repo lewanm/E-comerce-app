@@ -2,8 +2,9 @@
   position: absolute;
   color: white;
   background-color: blue;
-  border-radius: 3px;
-  top: 5px;
-  left: 5px;
+  border-radius: 5px;
+  top: 10%;
+  left: 10%;
   font-size: 0.8rem;
+  padding: 3px;
 }

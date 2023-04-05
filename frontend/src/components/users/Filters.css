@@ -1,8 +1,8 @@
 .filters-container {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .relevancia-container,

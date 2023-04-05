@@ -7,8 +7,7 @@ import "./Layout.css";
 const style = {
   color: "white",
   fontSize: "0.6rem",
-  display: "flex",
-  alignItems: "center",
+  textDecoration: "none",
 };
 
 export const Layout = () => {
@@ -25,8 +24,13 @@ export const Layout = () => {
                 </li>
               </ul>
             </nav>
-            <div style={style} className="logo">
-              Jumbo
+            <div
+              style={{ display: "flex", alignItems: "center" }}
+              className="logo"
+            >
+              <Link style={style} to="/">
+                Jumbo
+              </Link>
             </div>
           </div>
 

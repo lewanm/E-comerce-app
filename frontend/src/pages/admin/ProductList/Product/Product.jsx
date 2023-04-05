@@ -5,15 +5,11 @@ import axios from "axios";
 //STYLES
 import "./Product.css";
 
+//COMPONENTS
+import { PrecioJustos } from "../../../../components/PrecioJustos/PrecioJustos";
+
 export function Product({ updateProducts, product }) {
-  const {
-    id,
-    item,
-    brand,
-    model,
-    stock,
-    img = "https://electroluxar.vtexassets.com/arquivos/ids/162435-600-600?v=638016147499900000&width=600&height=600&aspect=tru",
-  } = product;
+  const { id, item, brand, model, stock, image, precio_justo } = product;
 
   const navigate = useNavigate();
 
@@ -37,7 +33,23 @@ export function Product({ updateProducts, product }) {
   return (
     <article className="modificar-nombre">
       <div className="admin-product-img">
-        <img src={img} alt={`${item} ${brand}`} />
+        <img src={image} alt={`${item} ${brand}`} />
+        {precio_justo && (
+          <span
+            style={{
+              background: "blue",
+              position: "absolute",
+              top: "0",
+              left: "0",
+              color: "white",
+              borderRadius: "50%",
+              fontSize: "0.7em",
+              padding: "4px",
+            }}
+          >
+            PJ
+          </span>
+        )}
       </div>
       <div className="admin-product-info">
         <table>
@@ -48,9 +60,7 @@ export function Product({ updateProducts, product }) {
             <tr>
               <td>{model}</td>
             </tr>
-            <tr>
-              <td>Stock:{stock}</td>
-            </tr>
+            <tr>{stock !== 0 && <td>Stock: {stock}</td>}</tr>
           </tbody>
         </table>
       </div>
