@@ -11,7 +11,7 @@
   flex-direction: column;
 
   gap: 5px;
-  width: 90%;
+  width: 100%;
 }
 .form .input-container label {
   font-size: 0.8rem;
@@ -39,7 +39,7 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
-  width: 90%;
+
   justify-self: center;
 }
 
@@ -49,14 +49,4 @@
   padding: 12px;
   border-radius: var(--border-radius-button);
   border: 0;
-}
-
-.success {
-  color: var(--main-font-color);
-  background-color: var(--button-success);
-}
-
-.warning {
-  color: var(--main-font-color);
-  background-color: var(--button-warning);
 }

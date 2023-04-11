@@ -1,0 +1,101 @@
+@use "sass:map";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --main-color: #2dc850;
+  --remove-color: red;
+  --main-font-color: white;
+  --main-font: "Montserrat", sans-serif;
+  --border-radius-button: 7px;
+  --border-color: #d1d1d1;
+  --button-success: #a4c735;
+  --button-warning: orange;
+}
+$colors: (
+  "main-color": #2dc850,
+  "light-color": #d3d3d3,
+  "font-color": black,
+  "font-contrast-color": white,
+  "border-color": #d1d1d1,
+  "button-warning": orange,
+  "button-success": #a4c735,
+);
+
+$border-color: #d1d1d1;
+
+$border-radius-button: 7px;
+
+$font_weights: (
+  "regular": 400,
+  "bold": 600,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  //  background-color: map.get($colors,"main-color");
+}
+//PROPERTIES
+.circle {
+  border-radius: 50%;
+}
+.rounded {
+  border-radius: $border-radius-button;
+}
+
+//COLORS
+.success {
+  background-color: map.get($colors, "button-success");
+  color: map.get($colors, "font-contrast-color");
+}
+.success:hover {
+  background-color: map.get($colors, "light-color");
+  color: map.get($colors, "font-color");
+}
+.warning {
+  background-color: map.get($colors, "button-warning");
+  color: map.get($colors, "font-contrast-color");
+}
+.warning:hover {
+  background-color: map.get($colors, "light-color");
+  color: map.get($colors, "font-color");
+}
+
+//COMPONENTS
+
+.round-button:hover,
+.circle-button:hover {
+  cursor: pointer;
+}
+.round-button {
+  user-select: none;
+  border: none;
+  padding: 10px 20px;
+
+  font-weight: map-get($font-weights, "bold");
+  //ver si dejo esto
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-button {
+  user-select: none;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  //ver si dejo esto
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-weight: map-get($font-weights, "bold");
+  font-size: 1.5rem;
+}

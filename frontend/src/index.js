@@ -6,12 +6,12 @@ import { NoPage } from "./pages/NoPage";
 import { TestPage } from "./pages/TestPage";
 
 //STYLES
-import "./global.css";
+//import "./global.scss";
 //COMPONENTS
 
 //ADMIN
-import { ProductList } from "./pages/admin/ProductList/ProductList";
-import { AddEditProduct } from "./pages/admin/ProductList/add-edit-product/AddEditProduct";
+import { ProductList } from "./pages/admin/ProductsList/index";
+import { AddEditProduct } from "./pages/admin/ProductsList/addEditProduct";
 
 //USER
 import { Products } from "./pages/products/Products";

@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 //STYLES
-import "./Product.css";
+import "./index.scss";
 
 //COMPONENTS
-import { PrecioJustos } from "../../../../components/PrecioJustos/PrecioJustos";
+import { PrecioJustos } from "components/PrecioJustos/PrecioJustos";
+//import { PrecioJustos } from "../../../../components/PrecioJustos/PrecioJustos";
 
 export function Product({ updateProducts, product }) {
   const { id, item, brand, model, stock, image, precio_justo } = product;
@@ -30,11 +31,19 @@ export function Product({ updateProducts, product }) {
     navigate(`/admin/product/${id}`);
   };
 
+  const clipWord = (word, amount) => {
+    return word.slice(0, amount) + "...";
+  };
+
   return (
-    <article className="modificar-nombre">
-      <div className="admin-product-img">
-        <img src={image} alt={`${item} ${brand}`} />
-        {precio_justo && (
+    <article className="admin-product-container">
+      <div className="admin-product-img-container">
+        <img
+          className="admin-product-img"
+          src={image}
+          alt={`${item} ${brand}`}
+        />
+        {/*         {precio_justo && (
           <span
             style={{
               background: "blue",
@@ -49,8 +58,9 @@ export function Product({ updateProducts, product }) {
           >
             PJ
           </span>
-        )}
+        )} */}
       </div>
+
       <div className="admin-product-info">
         <table>
           <tbody>
@@ -58,19 +68,26 @@ export function Product({ updateProducts, product }) {
               <td>{`${item} ${brand}`}</td>
             </tr>
             <tr>
-              <td>{model}</td>
+              <td>{model.length < 30 ? model : clipWord(model, 25)}</td>
             </tr>
             <tr>{stock !== 0 && <td>Stock: {stock}</td>}</tr>
           </tbody>
         </table>
       </div>
+
       <div className="admin-product-buttons">
-        <div className="edit-button" onClick={handleUpdate}>
-          ✏️
-        </div>
-        <div className="remove-button" onClick={handleRemove}>
-          X
-        </div>
+        <img
+          className="edit-button circle-button success"
+          onClick={handleUpdate}
+          src="/edit-svgrepo-com.svg"
+          alt=""
+        />
+        <img
+          className="remove-button circle-button warning"
+          onClick={handleRemove}
+          src="/delete-1487-svgrepo-com.svg"
+          alt=""
+        />
       </div>
     </article>
   );

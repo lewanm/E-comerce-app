@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3001/api/products";
+const url = "http://192.168.100.5:3001/api/products";
 
 export function getProducts() {
   return axios.get(url).then((response) => {
